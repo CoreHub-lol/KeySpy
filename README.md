@@ -1,160 +1,145 @@
-### KeyAgent - Keylogger & System Monitor
+### KeyAgent
 
 [
 
-](LICENSE)[
+](LICENSE)
+[
 
-](https://www.python.org/downloads/)[
-
-](#)[
-
-](#)[
+](https://www.python.org/downloads/)
+[
 
 ](#)
+[
 
----
+](https://www.python.org/)
+[
 
-**KeyAgent** is a Python-based keylogger for Windows that records keystrokes, takes screenshots, and sends data securely via a Discord webhook. Developed for educational and testing purposes only, for authorized use on systems you own or have permission to monitor.
+](CONTRIBUTING.md)
 
----
+A lightweight, educational Windows keylogger and system monitoring tool built with Python.
 
-## 🚀 Features
+## 📋 Overview
 
-- ⌨️ **Keylogging** - Captures all keystrokes including special characters
-- 📸 **Screenshots** - Takes periodic screen captures in PNG format
-- 📤 **Data Transfer** - Securely sends logs and screenshots via Discord webhook
-- 🔍 **System Information** - Collects user details, IP address, and OS information
-- 🔄 **Autostart** - Ensures persistent execution through Windows registry
+KeyAgent is a Python-based monitoring tool for Windows that records keystrokes, captures screenshots, and transmits data via Discord webhooks. This project is designed for **educational purposes** and **authorized system monitoring only**.
 
 
----
 
-## 📋 System Requirements
 
+
+## ✨ Key Features
+
+- **Keystroke Logging** - Captures all keyboard input including special keys
+- **Screenshot Capture** - Takes periodic screenshots of the system
+- **Discord Integration** - Securely sends collected data via webhooks
+- **System Information** - Gathers hardware, network, and user details
+- **Persistence** - Optional Windows registry integration for automatic startup
+
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Windows operating system
 - Python 3.8 or higher
-- Operating system: Windows
-- Dependencies: `keyboard`, `pyautogui`, `requests`, `pillow`, `psutil`
+- Required packages: `keyboard`, `pyautogui`, `requests`, `pillow`, `psutil`
 
 
----
+### Installation
 
-## 🛠️ Installation
-
-### Install Dependencies
+1. Clone the repository:
 
 ```shellscript
-pip install keyboard pyautogui requests pillow psutil
-```
-
-### Clone Repository
-
-```shellscript
-git clone https://github.com/<your-username>/KeyAgent.git
+git clone https://github.com/yourusername/KeyAgent.git
 cd KeyAgent
 ```
 
-### Configuration
 
-- Replace `DISCORD_WEBHOOK_URL` in `keyagent.py` with your Discord webhook URL.
+2. Install dependencies:
+
+```shellscript
+pip install -r requirements.txt
+```
 
 
----
+3. Configure your Discord webhook:
 
-## 💻 Usage
+1. Open `config.py`
+2. Replace `DISCORD_WEBHOOK_URL` with your webhook URL
+
+
+
+
+
+### Usage
+
+Run the main script with administrator privileges:
 
 ```shellscript
 python keyagent.py
 ```
 
-- Logs are stored in `%LOCALAPPDATA%\SystemService`.
-- Screenshots and logs are sent every 60 seconds.
-- **Important**: Execute the script with administrator rights (required for keylogging).
+## 🔧 Configuration Options
+
+| Setting | Description | Default
+|-----|-----|-----
+| `SCREENSHOT_INTERVAL` | Time between screenshots (seconds) | 300
+| `LOG_INTERVAL` | Time between log transmissions (seconds) | 60
+| `ENABLE_AUTOSTART` | Add to Windows startup | False
+| `LOG_DIRECTORY` | Local storage location | %LOCALAPPDATA%\SystemService
 
 
----
+## 📚 Documentation
 
-## 🔒 Security Instructions
+### Data Collection
 
-- Use KeyAgent **only on devices** that you **own or have explicit permission** to monitor.
-- Test in a secure environment (e.g., virtual machine) before deployment.
-- Ensure your Discord webhook is private and secure.
+KeyAgent collects the following information:
+
+- Keystrokes (including special keys)
+- Periodic screenshots
+- System information (username, hostname, IP address)
+- Active window titles
 
 
----
+### Data Storage
+
+- Logs are stored locally in `%LOCALAPPDATA%\SystemService`
+- Screenshots are saved as PNG files in the `screenshots` subdirectory
+- All data is transmitted via Discord webhook at configurable intervals
+
+
+## 🛡️ Legal & Ethical Use
+
+**IMPORTANT**: This software must only be used on systems you own or have explicit permission to monitor. Unauthorized use of KeyAgent may violate:
+
+- Computer Fraud and Abuse Act
+- Electronic Communications Privacy Act
+- Various state and international privacy laws
+
+
+The developers assume no liability for misuse or damages resulting from the use of this software.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read the [Contribution Guidelines](CONTRIBUTING.md) or create an issue/pull request.
+Contributions are welcome! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
 
----
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
 
 ## 📝 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
+## 🔗 Related Projects
 
-## ✨ Feature Details
-
-<details>`<summary>``<strong>`Keylogging`</strong>``</summary>`
-
-- Detects standard and special characters (e.g., Enter, Backspace).
-- Stores logs in a hidden file for security.
-
-
-</details><details>`<summary>``<strong>`Screenshots`</strong>``</summary>`
-
-- Creates PNG images every 5 minutes.
-- Saves to `%LOCALAPPDATA%\SystemService\screenshots`.
-
-
-</details><details>`<summary>``<strong>`Data Transfer`</strong>``</summary>`
-
-- Splits logs into chunks for Discord compatibility.
-- Deletes screenshots after successful upload.
-
-
-</details>---
-
-## 🔧 Technical Details
-
-- Written in Python 3
-- Thread-based keylogging logic
-- Lightweight PNG screenshots
-- Error handling for stable execution
+- [PyLogger](https://github.com/topics/python-keylogger) - Similar Python-based keyloggers
+- [System Monitor](https://github.com/topics/system-monitoring) - System monitoring tools
+- [Discord Webhooks](https://github.com/topics/discord-webhook) - Discord webhook integrations
 
 
 ---
 
-## 📈 Future Plans
-
-- 🖥️ GUI for easier operation
-- 🔐 Encrypted data transmission
-- 📡 Support for additional platforms
-- 📊 Log analysis tools
-
-
----
-
-## 💡 Tips
-
-- Check your webhook regularly for security.
-- Use a virtual machine for testing to minimize risks.
-- Document the logs for later analysis.
-
-
----
-
-## ⚠️ Disclaimer
-
-KeyAgent is intended for **educational and authorized monitoring purposes only**. Unauthorized use is illegal and unethical. The author assumes no liability for misuse or damages resulting from the use of this software.
-
-Using keyloggers without consent is illegal in most jurisdictions and violates privacy laws. Always ensure you have proper authorization before monitoring any system.
-
----
-
-## 🔗 Related Resources
-
-- [Python Documentation](https://docs.python.org/3/)
-- [Windows Registry Documentation](https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry)
-- [Discord Webhook API](https://discord.com/developers/docs/resources/webhook)
+`<sub>`⚠️ For educational purposes only. Use responsibly and ethically. ⚠️`</sub>`
