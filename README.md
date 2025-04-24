@@ -40,9 +40,9 @@
 ### 🛠 Installation
 
 ```bash
-git clone https://github.com/yourusername/KeyAgent.git
+git clone https://github.com/CoreHub-lol/KeySpy.git
 cd KeyAgent
-pip install -r requirements.txt
+pip install -r requirements.txt`
 ```
 
 ### ⚙️ Configuration
@@ -53,7 +53,7 @@ pip install -r requirements.txt
 ### ▶️ Run
 
 ```bash
-python keyagent.py
+python main.py
 ```
 > 🔐 Run with **administrator privileges** for full functionality.
 
